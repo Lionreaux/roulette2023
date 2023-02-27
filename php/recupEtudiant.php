@@ -1,5 +1,5 @@
 <?php
-include_once php/connexion.php;
+include_once "php/connexion.php";
 
 function getEtudiants(){
     $conn = generateMysqliConnexion();

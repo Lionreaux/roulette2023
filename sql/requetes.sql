@@ -34,3 +34,5 @@ INSERT INTO Etudiants (nom, classe, statut) VALUES
 ('Élève 8B', 2 ,0),
 ('Élève 9B', 2 ,0),
 ('Élève 10B', 2 ,0);
+
+ALTER DATABASE Roulette CHARACTER SET utf8 COLLATE utf8_general_ci;

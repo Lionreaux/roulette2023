@@ -10,3 +10,16 @@ function generateMysqliConnexion($user = "userRoulette", $password = "123456789"
         errorPage();
     }
 }
+
+function storeResultInArray($stmt){
+    $result = $stmt->get_result();
+    $retour = array();
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            array_push($retour, $row);
+        }
+        return $retour;
+    } else {
+        return array();
+    }
+}

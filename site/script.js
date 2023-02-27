@@ -3,15 +3,27 @@ function main() {
     baseEtudiants()
 }
 function baseEtudiants() {
+    console.log('tetst')
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", 'php/getEtudiant', true);
+    xhr.open("GET", '/php/getEtudiant', true);
     xhr.setRequestHeader("Content-Type", "application/json;");
     xhr.onreadystatechange = () => {
+        console.log(xhr.readyState)
         if (xhr.readyState === XMLHttpRequest.DONE) {
             console.log(xhr.responseText);
+
+            const jsonEtudiants = xhr.responseText;
+
+            const etudiants = JSON.parse(jsonEtudiants);
+            const listeNoms = [];
+
+            for (let i = 0; i < etudiants.length; i++) {
+                listeNoms.push(etudiants[i].nom);
+            }
+            console.log(listeNoms);
         }
     }
-    xhr.send;
+    xhr.send();
 }
 
 
