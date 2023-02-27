@@ -20,6 +20,20 @@ function baseEtudiants() {
             for (let i = 0; i < etudiants.length; i++) {
                 listeNoms.push(etudiants[i].nom);
             }
+
+            // Création de la liste HTML
+            const ul = document.getElementById('listeEtudiants');
+
+            for (let i = 0; i < listeNoms.length; i++) {
+                const li = document.createElement('li');
+                li.textContent = listeNoms[i];
+                ul.appendChild(li);
+            }
+
+            // Ajout de la liste à la page
+            const container = document.getElementById('listeEtudiants');
+            container.appendChild(ul);
+
             console.log(listeNoms);
         }
     }

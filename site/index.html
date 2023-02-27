@@ -7,13 +7,21 @@
     <script src="script.js"></script>
 </head>
 <body>
-<h1>emplacement du header </h1>
+<h1>Emplacement du header </h1>
 
 
 <button onclick="main()">haha</button>
 <table>
     <tr>
         <td><h3>Choix de l'Etudiant</h3></td>
+        <td><select onchange="" name="listeClasse" id="deroulClasse">
+            <optgroup label="Classes">
+                <option selected="selected" disabled></option>
+                <option value="Classe1">Classe 1</option>
+                <option value="Classe2">Classe 2</option>
+            </optgroup>
+        </select>
+        </td>
     </tr>
     <tr>
         <td><input type="text" id="Choisi"></td>
@@ -21,11 +29,6 @@
     </tr>
 </table>
 <ul id="listeEtudiants">
-    <li>Etudiant 1</li>
-    <li>Etudiant 2</li>
-    <li>Etudiant 3</li>
-    <li>Etudiant 4</li>
-    <li>Etudiant 5</li>
 
 </ul>
 </body>
