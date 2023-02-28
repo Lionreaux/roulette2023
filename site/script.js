@@ -86,6 +86,7 @@ function confirmer() {
         }
     }
     xhr.send(formdata);
+    document.getElementById("note").value="";
 }
 function recupEtudiant() {
     const maListe = document.getElementById('listeEtudiants');
@@ -106,3 +107,42 @@ function recupEtudiant() {
 
 }
 
+function recupAbsents() {
+    let formdata = new FormData();
+    formdata.append("idClasse", idClasse);
+    formdata.append("Statut", "Absent");
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", '/php/getAbsent', true);
+    xhr.onreadystatechange = () => {
+        console.log(xhr.status)
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status == 200) {
+            const jsonAbsent = xhr.responseText;
+            console.log(xhr.responseText);
+
+            const absent = JSON.parse(jsonAbsent);
+            const listeNoms = [];
+
+            for (let i = 0; i < absent.length; i++) {
+                listeNoms.push(absent[i].nom);
+            }
+
+            // Création de la liste HTML
+            const ul = document.getElementById('listeEtudiants');
+            const li = ul.querySelectorAll("li");
+
+            for (let i = 0; i < li.length; i++) {
+                li[i].remove();
+            }
+
+            for (let i = 0; i < listeNoms.length; i++) {
+                const li = document.createElement('li');
+                li.textContent = listeNoms[i];
+                ul.appendChild(li);
+            }
+
+
+            console.log(listeNoms);
+        }
+    }
+    xhr.send(formdata);
+}

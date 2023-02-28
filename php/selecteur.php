@@ -29,6 +29,11 @@ elseif (str_starts_with($_SERVER['REQUEST_URI'], "/php/")) {
         } elseif ($_SERVER['REQUEST_URI'] == "/php/statutEtudiant") {
             include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/php/statutEtudiant .php");
         }
+    elseif (str_starts_with($_SERVER['REQUEST_URI'], "/php/getAbsent")) {
+        include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/php/getAbsent.php");
+    } elseif ($_SERVER['REQUEST_URI'] == "/php/recupAbsent") {
+        include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/php/recupAbsent .php");
+    }
     }
 
 
