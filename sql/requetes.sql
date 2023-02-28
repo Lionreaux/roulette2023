@@ -9,7 +9,7 @@ SELECT C.nom FROM Classes C;
 
 
 #Requetes d'insertions des étudiants :
-INSERT INTO Classes (nom) VALUES ('Classe A'),('Classe B');
+INSERT INTO Classes (nom) VALUES ('ClasseA'),('ClasseB');
 
 INSERT INTO Etudiants (nom, classe, statut) VALUES
 ('Élève 1A', 1 ,0),
@@ -36,3 +36,5 @@ INSERT INTO Etudiants (nom, classe, statut) VALUES
 ('Élève 10B', 2 ,0);
 
 ALTER DATABASE Roulette CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+SELECT C.id FROM Classes C WHERE C.nom = "Classe A";

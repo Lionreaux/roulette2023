@@ -1,6 +1,7 @@
 <?php
 include_once "php/recupEtudiant.php";
 
+
 $etudiants = getEtudiants();
 
 if ($etudiants){

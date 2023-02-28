@@ -2,10 +2,12 @@
 function main() {
     baseEtudiants()
 }
+var idClasse;
 function baseEtudiants() {
     console.log('tetst')
+    console.log(idClasse);
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", '/php/getEtudiant', true);
+    xhr.open("GET", '/php/getEtudiant?idClasse=' + idClasse, true);
     xhr.setRequestHeader("Content-Type", "application/json;");
     xhr.onreadystatechange = () => {
         console.log(xhr.readyState)
@@ -23,6 +25,11 @@ function baseEtudiants() {
 
             // Création de la liste HTML
             const ul = document.getElementById('listeEtudiants');
+            const li = ul.querySelectorAll("li");
+
+            for (let i = 0; i < li.length; i++) {
+                li[i].remove();
+            }
 
             for (let i = 0; i < listeNoms.length; i++) {
                 const li = document.createElement('li');
@@ -30,11 +37,27 @@ function baseEtudiants() {
                 ul.appendChild(li);
             }
 
-            // Ajout de la liste à la page
-            const container = document.getElementById('listeEtudiants');
-            container.appendChild(ul);
 
             console.log(listeNoms);
+        }
+    }
+    xhr.send();
+}
+
+function getClasse() {
+    var nomClasse = document.getElementById("deroulClasse").value;
+    console.log(nomClasse);
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", '/php/getClasse?classe=' + nomClasse, true);
+    xhr.setRequestHeader("Content-Type", "application/json;");
+    xhr.onreadystatechange = () => {
+        console.log(xhr.readyState)
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            let json = JSON.parse(xhr.responseText)
+            console.log(xhr.responseText);
+            idClasse = json[0]['id'];
+            console.log(idClasse);
+            baseEtudiants();
         }
     }
     xhr.send();
