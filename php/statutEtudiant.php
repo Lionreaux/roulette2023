@@ -2,13 +2,13 @@
 include_once "php/connexion.php";
 error_log("ehho");
 
-function statutEtudiant($statut,$nom)
+function statutEtudiant($statut,$nom,$note)
 {
     try {
         error_log($nom);
         $conn = generateMysqliConnexion();
-        $stmt = $conn->prepare("UPDATE Etudiants SET statut = ? WHERE nom = ?;");
-        $stmt->bind_param('ss', $statut , $nom);
+        $stmt = $conn->prepare("UPDATE Etudiants SET statut = ?, note = ? WHERE nom = ?;");
+        $stmt->bind_param('sis', $statut ,$note, $nom);
         $stmt->execute();
         return true;
     } catch (Exception $e) {

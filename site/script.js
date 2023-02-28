@@ -70,9 +70,12 @@ var statut;
 function checkStatut(statutEtud) {
     statut = statutEtud;
 
+}
+function confirmer() {
     let formdata = new FormData();
     formdata.append("Statut", statut);
     formdata.append("nom", document.getElementById("Choisi").value);
+    formdata.append("note", document.getElementById("note").value);
     //console.log(formdata.get("nom"));
     const xhr = new XMLHttpRequest();
     xhr.open("POST", '/php/changeEtudiant', true);
@@ -83,9 +86,6 @@ function checkStatut(statutEtud) {
         }
     }
     xhr.send(formdata);
-}
-function confirmer() {
-
 }
 function recupEtudiant() {
     const maListe = document.getElementById('listeEtudiants');

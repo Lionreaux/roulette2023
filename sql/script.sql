@@ -14,6 +14,7 @@ CREATE TABLE Etudiants (
   nom varchar(255),
   classe int ,
   statut VARCHAR(255) ,
+  note int ,
   PRIMARY KEY (id),
   FOREIGN KEY (classe) REFERENCES Classes(id) ON DELETE CASCADE
 );
