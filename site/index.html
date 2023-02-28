@@ -24,8 +24,12 @@
         </td>
     </tr>
     <tr>
-        <td><input type="text" id="Choisi"></td>
+        <td><input type="text" id="Choisi" readonly placeholder="Etudiant choisi"></td>
         <td><button onclick="recupEtudiant()">Etudiant aléatoire</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="checkStatut('Present')">Present</button><button onclick="checkStatut('Absent')">Absent</button></td>
+        <td><input type="text" placeholder="note"></td>
     </tr>
 </table>
 <ul id="listeEtudiants">

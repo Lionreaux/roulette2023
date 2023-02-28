@@ -19,17 +19,21 @@ elseif (str_starts_with($_SERVER['REQUEST_URI'], "/php/")) {
     } elseif ($_SERVER['REQUEST_URI'] == "/php/recupEtudiant") {
         include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/php/recupEtudiant.php");
     }
-
-    elseif (str_starts_with($_SERVER['REQUEST_URI'], "/php/")) {
-        if (str_starts_with($_SERVER['REQUEST_URI'], "/php/getClasse")) {
+        elseif (str_starts_with($_SERVER['REQUEST_URI'], "/php/getClasse")) {
             include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/php/getClasse.php");
         } elseif ($_SERVER['REQUEST_URI'] == "/php/recupClasse") {
             include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/php/recupClasse.php");
         }
+        elseif (str_starts_with($_SERVER['REQUEST_URI'], "/php/changeEtudiant")) {
+            include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/php/changeEtudiant.php");
+        } elseif ($_SERVER['REQUEST_URI'] == "/php/statutEtudiant") {
+            include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/php/statutEtudiant .php");
+        }
     }
+
 
     else {
         http_response_code(404);
         exit();
-    }
+
 }

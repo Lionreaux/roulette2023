@@ -65,6 +65,28 @@ function getClasse() {
 
 
 var f;
+var statut;
+
+function checkStatut(statutEtud) {
+    statut = statutEtud;
+
+    let formdata = new FormData();
+    formdata.append("Statut", statut);
+    formdata.append("nom", document.getElementById("Choisi").value);
+    //console.log(formdata.get("nom"));
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", '/php/changeEtudiant', true);
+    xhr.onreadystatechange = () => {
+        console.log(xhr.status)
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status == 200) {
+            console.log("Succès");
+        }
+    }
+    xhr.send(formdata);
+}
+function confirmer() {
+
+}
 function recupEtudiant() {
     const maListe = document.getElementById('listeEtudiants');
     console.log(maListe);
