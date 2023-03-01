@@ -119,6 +119,6 @@ function returnFont($pathToFont): void
 }
 
 function errorPage(){
-    http_response_code(500);
+    http_response_code(402);
     exit;
 }
