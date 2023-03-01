@@ -1,7 +1,7 @@
 <?php
-include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "php/recupClasse.php");
+include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/php/recupClasse.php");
 
-
+error_log("testttttt");
 $classe = getClasse();
 
 if ($classe){
