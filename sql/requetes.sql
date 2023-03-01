@@ -5,6 +5,12 @@ SELECT E.nom FROM Etudiants E WHERE E.classe=1;
 SELECT C.nom FROM Classes C;
 
 
+CREATE USER 'userRoulette'@'localhost' IDENTIFIED BY '123456789';
+
+GRANT ALL PRIVILEGES ON * . * TO 'userRoulette'@'localhost';
+
+
+
 
 
 

@@ -34,10 +34,8 @@ elseif (str_starts_with($_SERVER['REQUEST_URI'], "/php/")) {
     } elseif ($_SERVER['REQUEST_URI'] == "/php/recupAbsent") {
         include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/php/recupAbsent .php");
     }
-    }
-
-
-    else {
+} else {
+    error_log($_SERVER['REQUEST_URI']);
         http_response_code(404);
         exit();
 
