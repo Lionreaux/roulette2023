@@ -1,5 +1,5 @@
 <?php
-include_once "php/recupClasse.php";
+include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "php/recupClasse.php");
 
 
 $classe = getClasse();
