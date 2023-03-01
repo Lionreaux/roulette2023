@@ -9,7 +9,6 @@ function getClasse(){
     $stmt->execute();
     $result = storeResultInArray($stmt);
     if ($result){
-        error_log($result);
         return $result;
     }else{
         return null;

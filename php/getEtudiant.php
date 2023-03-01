@@ -1,5 +1,5 @@
 <?php
-include_once "php/recupEtudiant.php";
+include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/php/recupEtudiant.php");
 
 
 $etudiants = getEtudiants();
