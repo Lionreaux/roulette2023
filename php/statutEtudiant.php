@@ -1,5 +1,5 @@
 <?php
-include_once "php/connexion.php";
+include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/php/connexion.php");
 error_log("ehho");
 
 function statutEtudiant($statut,$nom,$note)

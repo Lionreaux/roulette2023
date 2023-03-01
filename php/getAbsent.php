@@ -1,5 +1,5 @@
 <?php
-include_once "php/recupAbsent.php";
+include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/php/recupAbsent.php");
 
 
 $absent = getAbsent($_POST["idClasse"],$_POST["Statut"]);
