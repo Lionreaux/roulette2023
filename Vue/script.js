@@ -7,7 +7,7 @@ function baseEtudiants() {
     console.log('tetst')
     console.log(idClasse);
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", '/php/getEtudiant?idClasse=' + idClasse, true);
+    xhr.open("GET", '/Controlleur/Json/getEtudiant?idClasse=' + idClasse, true);
     xhr.setRequestHeader("Content-Type", "application/json;");
     xhr.onreadystatechange = () => {
         console.log(xhr.readyState)
@@ -48,7 +48,7 @@ function getClasse() {
     var nomClasse = document.getElementById("deroulClasse").value;
     console.log(nomClasse);
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", '/php/getClasse?classe=' + nomClasse, true);
+    xhr.open("GET", '/Controlleur/Json/getClasse?classe=' + nomClasse, true);
     xhr.setRequestHeader("Content-Type", "application/json;");
     xhr.onreadystatechange = () => {
         console.log(xhr.readyState)
@@ -78,7 +78,7 @@ function confirmer() {
     formdata.append("note", document.getElementById("note").value);
     //console.log(formdata.get("nom"));
     const xhr = new XMLHttpRequest();
-    xhr.open("POST", '/php/changeEtudiant', true);
+    xhr.open("POST", '/Controlleur/Json/changeEtudiant', true);
     xhr.onreadystatechange = () => {
         console.log(xhr.status)
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status == 200) {
@@ -112,7 +112,7 @@ function recupAbsents() {
     formdata.append("idClasse", idClasse);
     formdata.append("Statut", "Absent");
     const xhr = new XMLHttpRequest();
-    xhr.open("POST", '/php/getAbsent', true);
+    xhr.open("POST", '/Controlleur/Json/getAbsent', true);
     xhr.onreadystatechange = () => {
         console.log(xhr.status)
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status == 200) {

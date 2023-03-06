@@ -1,5 +1,5 @@
 <?php
-include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/php/statutEtudiant.php");
+include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/Modele/statutEtudiant.php");
 
 $statut = statutEtudiant($_POST["Statut"],$_POST["nom"],$_POST["note"]);
 error_log("ICIIIII");

@@ -1,5 +1,5 @@
 <?php
-include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/php/connexion.php");
+include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/Modele/connexion.php");
 
 function getEtudiants(){
     error_log("boubou");

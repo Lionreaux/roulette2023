@@ -9,4 +9,4 @@ function pathForOs($path){
 }
 
 
-include_once (pathForOs($_SERVER['DOCUMENT_ROOT']."/php/selecteur.php"));
+include_once (pathForOs($_SERVER['DOCUMENT_ROOT']."/Controlleur/selecteur.php"));

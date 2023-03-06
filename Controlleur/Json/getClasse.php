@@ -1,5 +1,5 @@
 <?php
-include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/php/recupClasse.php");
+include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/Modele/recupClasse.php");
 
 error_log("testttttt");
 $classe = getClasse();

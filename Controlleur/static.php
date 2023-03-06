@@ -91,7 +91,7 @@ function returnImmage($pathToImage): void
  */
 function returnImageFromDatabase($id){
     if(is_numeric($id)){
-        include_once pathForOs($_SERVER['DOCUMENT_ROOT']."/../Modele/getImage.php");
+        include_once pathForOs($_SERVER['DOCUMENT_ROOT']."/../Modele/getImage.Controlleur");
         $arrImage = getImageFromId($id);
         //header("Cache-Control: max-age=31536000");
         header("Content-Type: image/".$arrImage['extension']);
