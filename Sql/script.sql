@@ -3,10 +3,19 @@ CREATE DATABASE Roulette;
 
 USE Roulette;
 
+CREATE TABLE Profs (
+  id int auto_increment NOT NULL,
+  nom varchar(255),
+  mdp varchar(255),
+  PRIMARY KEY (id)
+);
+
 CREATE TABLE Classes (
   id int auto_increment NOT NULL ,
   nom varchar(255),
-  PRIMARY KEY (id)
+  responsable varchar(255),
+  PRIMARY KEY (id),
+  FOREIGN KEY (responsable) REFERENCES Profs(nom) ON DELETE CASCADE
 );
 
 CREATE TABLE Etudiants (
@@ -20,7 +29,9 @@ CREATE TABLE Etudiants (
 );
 
 #Requetes d'insertions des étudiants :
-INSERT INTO Classes (nom) VALUES ('ClasseA'),('ClasseB');
+INSERT INTO Profs (nom,mdp) VALUES ('Benjamin','123'),('Benoit','456'),('Stephane','789');
+
+INSERT INTO Classes (nom,responsable) VALUES ('ClasseA','Benjamin'),('ClasseB','Benoit');
 
 INSERT INTO Etudiants (nom, classe) VALUES
 ('Élève 1A', 1),
