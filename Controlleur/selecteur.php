@@ -8,7 +8,12 @@ if ($_SERVER['REQUEST_URI'] == "/") {
 }elseif ($_SERVER['REQUEST_URI'] == "/style.css"){
     returnCssFile(pathForOs($_SERVER['DOCUMENT_ROOT']."/Vue/style.css"));
 }elseif ($_SERVER['REQUEST_URI'] == "/script.js"){
-    returnJsFile(pathForOs($_SERVER['DOCUMENT_ROOT']."/Vue/script.js"));}
+    returnJsFile(pathForOs($_SERVER['DOCUMENT_ROOT']."/Vue/script.js"));
+}elseif ($_SERVER['REQUEST_URI'] == "/auth.html"){
+    returnHtmlFile(pathForOs($_SERVER['DOCUMENT_ROOT']."/Vue/auth.html"));
+    }elseif ($_SERVER['REQUEST_URI'] == "/auth.js"){
+        returnJsFile(pathForOs($_SERVER['DOCUMENT_ROOT']."/Vue/auth.js"));}
+
 
 
 
