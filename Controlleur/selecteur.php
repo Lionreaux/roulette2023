@@ -11,8 +11,12 @@ if ($_SERVER['REQUEST_URI'] == "/") {
     returnJsFile(pathForOs($_SERVER['DOCUMENT_ROOT']."/Vue/script.js"));
 }elseif ($_SERVER['REQUEST_URI'] == "/index.html"){
     returnHtmlFile(pathForOs($_SERVER['DOCUMENT_ROOT']."/Vue/index.html"));
-    }elseif ($_SERVER['REQUEST_URI'] == "/auth.js"){
-        returnJsFile(pathForOs($_SERVER['DOCUMENT_ROOT']."/Vue/auth.js"));}
+}elseif ($_SERVER['REQUEST_URI'] == "/gestion.js"){
+    returnJsFile(pathForOs($_SERVER['DOCUMENT_ROOT']."/Vue/gestion.js"));
+}elseif ($_SERVER['REQUEST_URI'] == "/gestion.html"){
+    returnHtmlFile(pathForOs($_SERVER['DOCUMENT_ROOT']."/Vue/gestion.html"));
+}elseif ($_SERVER['REQUEST_URI'] == "/auth.js"){
+    returnJsFile(pathForOs($_SERVER['DOCUMENT_ROOT']."/Vue/auth.js"));}
 
 
 
@@ -29,6 +33,11 @@ elseif (str_starts_with($_SERVER['REQUEST_URI'], "/Controlleur/")) {
         } elseif ($_SERVER['REQUEST_URI'] == "/Modele/recupClasse") {
             include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/Modele/recupClasse.php");
         }
+    elseif (str_starts_with($_SERVER['REQUEST_URI'], "/Controlleur/Json/listClasse")) {
+        include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/Controlleur/Json/listClasse.php");
+    } elseif ($_SERVER['REQUEST_URI'] == "/Modele/listerClasse") {
+        include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/Modele/listerClasse.php");
+    }
     elseif (str_starts_with($_SERVER['REQUEST_URI'], "/Controlleur/Json/rezClasse")) {
         include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/Controlleur/Json/rezClasse.php");
     } elseif ($_SERVER['REQUEST_URI'] == "/Modele/rezClasse") {

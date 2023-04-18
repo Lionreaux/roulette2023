@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gestion</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="gestion.js"></script>
+</head>
+<body>
+<h1>Gestion des classes et des étudiants</h1>
+
+<h2>Classes</h2>
+
+<table id="CreaClasse">
+    <thead>
+    <tr>
+        <th class="Classe">ID</th>
+        <th class="Classe">Nom</th>
+        <th class="Classe">Responsable</th>
+        <th class="Classe">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td class="Classe"></td><td class="Classe"></td><td class="Classe"></td><td class="Classe"><button>-</button><button>Validez</button></td></tr>
+    <tr><td class="Classe" colspan="4"><button>+</button></td></tr>
+    </tbody>
+</table>
+<h2>Ajout d'un étudiant</h2>
+<table id="ajoutEtudiant">
+    <thead>
+    <tr>
+        <th class="Etudiant">Nom</th>
+        <th class="Etudiant">Classe</th>
+        <th class="Etudiant">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td class="Etudiant"><input type="text" id="nom"></td><td class="Etudiant"><select name="listeClasse" id="deroulClasse"></select></td><td class="Etudiant"> <button>Validez</button></td></tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -64,3 +64,17 @@ li {
     padding: 10px;
     border: 1px solid #ddd;
 }
+
+
+
+
+/* style Gestion */
+
+.Classe {
+    width: 25%;
+    text-align: center;
+}
+.Etudiant{
+    width: 33%;
+    text-align: center;
+}

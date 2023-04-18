@@ -2,7 +2,7 @@
 SELECT E.nom FROM Etudiants E WHERE E.classe=1;
 
 #requete pour obtenir toutes les classes :
-SELECT C.nom FROM Classes C;
+SELECT C.id, C.nom, C.responsable FROM Classes C;
 
 
 CREATE USER 'userRoulette'@'localhost' IDENTIFIED BY '123456789';
