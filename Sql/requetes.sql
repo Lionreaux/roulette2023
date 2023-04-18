@@ -46,3 +46,12 @@ ALTER DATABASE Roulette CHARACTER SET utf8 COLLATE utf8_general_ci;
 SELECT C.id FROM Classes C WHERE C.nom = "Classe A";
 
 UPDATE Etudiants SET statut = "Absent" WHERE id = 3;
+
+#Requete pour lié la classe a un enseignant
+SELECT C.id FROM Classes C,Profs P WHERE C.responsable = P.id_prof AND P.nom = "Benoit";
+
+#Requete pour reporter les status actuels aux statuts du dernier cours a la fin du cours.
+SELECT E.statut FROM Etudiants E WHERE E.id = 8;
+
+UPDATE Etudiants SET dernierCours = Etudiants.statut WHERE id = 8;
+UPDATE Etudiants SET statut = "" WHERE id = 8;

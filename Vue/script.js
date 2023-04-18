@@ -146,3 +146,18 @@ function recupAbsents() {
     }
     xhr.send(formdata);
 }
+
+function reinitialiser() {
+    var nomClasse = document.getElementById("deroulClasse").value;
+    console.log(nomClasse);
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", '/Controlleur/Json/rezClasse?classe=' + nomClasse, true);
+    xhr.setRequestHeader("Content-Type", "application/json;");
+    xhr.onreadystatechange = () => {
+        console.log(xhr.readyState)
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            console.log("Reussi")
+        }
+    }
+    xhr.send();
+}

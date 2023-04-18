@@ -10,7 +10,7 @@ function checkLogin($userName, $password) {
         $stmt->execute();
         $result = storeResultInArray($stmt);
         error_log("testtt");
-        if (!empty($result)){
+        if ($result){
             error_log("fin check");
             return true;
         }else{

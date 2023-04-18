@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1> Roulette des Etudiants </h1>
-
+<button>Gestion Classes</button>
 <table>
     <tr>
         <td><h3>Choix de l'Etudiant</h3></td>
@@ -20,6 +20,7 @@
             </optgroup>
         </select>
             <button onclick="recupAbsents()">Seulement les absents</button>
+            <button onclick="recupTous()">Tout ceux non passés</button>
         </td>
     </tr>
     <tr>
@@ -32,8 +33,10 @@
     </tr>
     <tr>
         <td><button onclick="confirmer()">confirmez !</button></td>
+        <td><button onclick="reinitialiser()">Réinitialiser la base.</button></td>
     </tr>
 </table>
+
 <ul id="listeEtudiants">
 
 </ul>

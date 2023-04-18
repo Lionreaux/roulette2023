@@ -18,12 +18,14 @@ CREATE TABLE Classes (
   FOREIGN KEY (responsable) REFERENCES Profs(id_prof) ON DELETE CASCADE
 );
 
+
 CREATE TABLE Etudiants (
   id int auto_increment NOT NULL ,
   nom varchar(255),
   classe int ,
   statut VARCHAR(255) ,
   note int ,
+  dernierCours VARCHAR(255),
   PRIMARY KEY (id),
   FOREIGN KEY (classe) REFERENCES Classes(id) ON DELETE CASCADE
 );
