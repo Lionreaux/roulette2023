@@ -7,12 +7,15 @@
     <script src="script.js"></script>
 </head>
 <body>
-<h1> Roulette des Etudiants </h1>
-<button>Gestion Classes</button>
+<div>
+    <h1> Roulette des Etudiants </h1>
+    <p hidden="hidden" id="Prof"></p>
+</div>
+<button onclick="window.location='gestion.html'">Gestion Classes</button>
 <table>
     <tr>
         <td><h3>Choix de l'Etudiant</h3></td>
-        <td><select onchange="getClasse()" name="listeClasse" id="deroulClasse">
+        <td><select onchange="getClasse(); hide()" name="listeClasse" id="deroulClasse">
             <optgroup label="Classes">
                 <option selected="selected" disabled></option>
                <!-- <option value="ClasseA">Classe 1</option>
@@ -21,6 +24,7 @@
         </select>
             <button onclick="recupAbsents()">Seulement les absents</button>
             <button onclick="recupTous()">Tout ceux non passés</button>
+            <button onclick="getClasse()">Tout le monde</button>
         </td>
     </tr>
     <tr>
@@ -33,7 +37,7 @@
     </tr>
     <tr>
         <td><button onclick="confirmer()">confirmez !</button></td>
-        <td><button onclick="reinitialiser()">Réinitialiser la base.</button></td>
+        <td><button onclick="reinitialiser()">Réinitialiser la base.</button><button onclick="finCours()">fin de cours</button></td>
     </tr>
 </table>
 

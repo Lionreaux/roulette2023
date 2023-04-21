@@ -13,7 +13,8 @@ if (tryLogin($username, $password)){
     $_SESSION["username"] = $username;
 
     // rediriger vers la page d'index
-    header("Location: /index.html");
+    error_log("avant index");
+    echo("/index.html");
     exit(); // arrêter l'exécution du script après la redirection
 }else{
     error_log("C'est pas bon");

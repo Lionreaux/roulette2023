@@ -8,21 +8,20 @@
 </head>
 <body>
 <h1>Gestion des classes et des étudiants</h1>
-
+<p hidden="hidden" id="Prof"></p>
+<button onclick="window.location='index.html'">Retour</button>
 <h2>Classes</h2>
 
 <table id="CreaClasse">
     <thead>
     <tr>
-        <th class="Classe">ID</th>
         <th class="Classe">Nom</th>
         <th class="Classe">Responsable</th>
         <th class="Classe">Action</th>
     </tr>
     </thead>
     <tbody>
-    <tr><td class="Classe"></td><td class="Classe"></td><td class="Classe"></td><td class="Classe"><button>-</button><button>Validez</button></td></tr>
-    <tr><td class="Classe" colspan="4"><button>+</button></td></tr>
+    <tr><td class="Classe"><input type="text" id="nomClasse"></td><td class="Classe"><input type="text" id="resp" readonly></td><td class="Classe"><button onclick="creerClasse()">Validez</button></td></tr>
     </tbody>
 </table>
 <h2>Ajout d'un étudiant</h2>
@@ -35,7 +34,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr><td class="Etudiant"><input type="text" id="nom"></td><td class="Etudiant"><select name="listeClasse" id="deroulClasse"></select></td><td class="Etudiant"> <button>Validez</button></td></tr>
+    <tr><td class="Etudiant"><input type="text" id="nom"></td><td class="Etudiant"><select name="listeClasse" id="deroulClasse"></select></td><td class="Etudiant"> <button onclick="validerEtudiant()">Validez</button></td></tr>
     </tbody>
 </table>
 </body>

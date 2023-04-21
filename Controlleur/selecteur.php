@@ -52,11 +52,28 @@ elseif (str_starts_with($_SERVER['REQUEST_URI'], "/Controlleur/")) {
         include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/Controlleur/Login.php");
     } elseif ($_SERVER['REQUEST_URI'] == "/Modele/LoginBDD") {
         include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/Modele/LoginBDD.php");
+    }elseif (str_starts_with($_SERVER['REQUEST_URI'], "/Controlleur/Json/getSession")) {
+        include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/Controlleur/Json/getSession.php");
     }
     elseif (str_starts_with($_SERVER['REQUEST_URI'], "/Controlleur/Json/getAbsent")) {
         include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/Controlleur/Json/getAbsent.php");
     } elseif ($_SERVER['REQUEST_URI'] == "/Modele/recupAbsent") {
-        include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/Modele/recupAbsent .php");
+        include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/Modele/recupAbsent.php");
+    }
+    elseif (str_starts_with($_SERVER['REQUEST_URI'], "/Controlleur/Json/insertEtud")) {
+        include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/Controlleur/Json/insertEtud.php");
+    }elseif ($_SERVER['REQUEST_URI'] == "/Modele/insertEtudiant") {
+        include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/Modele/insertEtudiant.php");
+    }
+    elseif (str_starts_with($_SERVER['REQUEST_URI'], "/Controlleur/Json/addClasse")) {
+        include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/Controlleur/Json/addClasse.php");
+    }elseif ($_SERVER['REQUEST_URI'] == "/Modele/ajoutClasse") {
+        include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/Modele/ajoutClasse.php");
+    }
+    elseif (str_starts_with($_SERVER['REQUEST_URI'], "/Controlleur/Json/finCours")) {
+        include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/Controlleur/Json/finCours.php");
+    }elseif ($_SERVER['REQUEST_URI'] == "/Modele/finirCours") {
+        include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/Modele/finirCours.php");
     }
 } else {
     error_log($_SERVER['REQUEST_URI']);

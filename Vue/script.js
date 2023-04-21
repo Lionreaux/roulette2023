@@ -1,6 +1,12 @@
 window.onload = function() {
-    listClasse();
+    prof();
 };
+
+
+function hide() {
+    const select = document.getElementById('deroulClasse');
+    select.style.display = 'none';
+}
 
 function main() {
     baseEtudiants()
@@ -64,6 +70,8 @@ function getClasse() {
         }
     }
     xhr.send();
+
+
 }
 
 
@@ -79,6 +87,7 @@ function confirmer() {
     formdata.append("Statut", statut);
     formdata.append("nom", document.getElementById("Choisi").value);
     formdata.append("note", document.getElementById("note").value);
+    formdata.append("classe", document.getElementById("deroulClasse").value);
     //console.log(formdata.get("nom"));
     const xhr = new XMLHttpRequest();
     xhr.open("POST", '/Controlleur/Json/changeEtudiant', true);
@@ -108,6 +117,10 @@ function recupEtudiant() {
     document.getElementById('Choisi').value = elements[i].textContent;
     maListe.removeChild(elements[i]);
 
+    const listeEtudiants = document.querySelector('#listeEtudiants');
+    if (listeEtudiants.children.length === 0) {
+        getClasse();
+    }
 }
 
 function recupAbsents() {
@@ -167,7 +180,7 @@ function reinitialiser() {
 
 function listClasse() {
     console.log("OUI")
-    const utilisateur = "Benjamin";
+    const utilisateur = document.getElementById("Prof").textContent;
     const xhr = new XMLHttpRequest();
     xhr.open("GET", '/Controlleur/Json/listClasse?utilisateur=' + utilisateur, true);
     xhr.setRequestHeader("Content-Type", "application/json;");
@@ -187,3 +200,29 @@ function listClasse() {
     }
     xhr.send();
 }
+function prof(){
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            var response = JSON.parse(xhr.responseText);
+            console.log(response.username);
+            document.getElementById("Prof").textContent = response.username;
+        }
+    };
+    xhr.open('GET', '/Controlleur/Json/getSession');
+    xhr.send();
+    setTimeout(() => { listClasse();}, 500);
+
+}
+
+function finCours() {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            window.location="/";
+        }
+    };
+    xhr.open('GET', '/Controlleur/Json/finCours');
+    xhr.send();
+}
+
