@@ -3,6 +3,9 @@
 sudo apt update
 sudo apt-get upgrade -y
 
+#Git
+sudo apt install git
+
 #php
 sudo apt-get install -y php8.1
 
@@ -24,7 +27,8 @@ git clone https://github.com/Lionreaux/roulette2023.git
 sudo mysql < /var/www/roulette2023/Sql/script.sql
 
 #config apache
-sudo echo "<VirtualHost :80>
+sudo tee /etc/apache2/sites-enabled/000-default.conf > /dev/null <<EOF
+<VirtualHost :80>
     ServerName localhost
     DocumentRoot /var/www/roulette2023
     <Directory /var/www/roulette2023/>
@@ -36,7 +40,9 @@ sudo echo "<VirtualHost :80>
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.)$ /Controlleur/index.php?path=$1 [NC,L,QSA]
- </VirtualHost>" > /etc/apache2/site-enabled/000-default.conf
+ </VirtualHost>
+EOF
+
 
 
 sudo systemctl restart apache2
