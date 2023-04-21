@@ -16,8 +16,12 @@ sudo a2enmod php8.1
 sudo apt-get install -y libapache2-mod-php8.1 php-mysql
 sudo systemctl restart apache2
 
+cd /var/www || exit
+
+git clone https://github.com/Lionreaux/roulette2023.git
+
 #config mysql
-sudo mysql < ./Sql/script.sql
+sudo mysql < /var/www/roulette2023/Sql/script.sql
 
 #config apache
 sudo echo "<VirtualHost :80>
