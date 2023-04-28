@@ -1,16 +1,16 @@
 #!/bin/bash
 
 sudo apt update
-sudo apt-get upgrade -y
+sudo apt upgrade 
 
 #Git
 sudo apt install git
 
 #php
-sudo apt-get install -y php8.1
+sudo apt install -y php8.1
 
 #SQL
-sudo apt-get install -y mariadb-server
+sudo apt install -y mariadb-server
 
 #apache2
 sudo apt install -y apache2
