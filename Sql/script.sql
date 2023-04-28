@@ -60,3 +60,6 @@ INSERT INTO Etudiants (nom, classe) VALUES
 ('Élève 10B', 2);
 
 
+CREATE USER 'userRoulette'@'localhost' IDENTIFIED BY '123456789';
+
+GRANT ALL PRIVILEGES ON * . * TO 'userRoulette'@'localhost';
