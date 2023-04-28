@@ -4,7 +4,7 @@ sudo apt update
 sudo apt upgrade 
 
 #Git
-sudo apt install git
+sudo apt install -y git
 
 #php
 sudo apt install -y php8.1
