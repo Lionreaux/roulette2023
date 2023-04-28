@@ -21,7 +21,7 @@ sudo systemctl restart apache2
 
 cd /var/www || exit
 
-git clone https://github.com/Lionreaux/roulette2023.git
+sudo git clone https://github.com/Lionreaux/roulette2023.git
 
 #config mysql
 sudo mysql < /var/www/roulette2023/Sql/script.sql
