@@ -4,7 +4,7 @@ sudo apt update
 sudo apt upgrade 
 
 #Git
-sudo apt install git
+sudo apt install -y git
 
 #php
 sudo apt install -y php8.1
@@ -16,12 +16,12 @@ sudo apt install -y mariadb-server
 sudo apt install -y apache2
 sudo a2enmod rewrite
 sudo a2enmod php8.1
-sudo apt-get install -y libapache2-mod-php8.1 php-mysql
+sudo apt install -y libapache2-mod-php8.1 php-mysql
 sudo systemctl restart apache2
 
 cd /var/www || exit
 
-git clone https://github.com/Lionreaux/roulette2023.git
+sudo git clone https://github.com/Lionreaux/roulette2023.git
 
 #config mysql
 sudo mysql < /var/www/roulette2023/Sql/script.sql
