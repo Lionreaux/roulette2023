@@ -9,7 +9,7 @@ $nomClasse = $_GET["nomClasse"];
 $resp = $_GET["resp"];
 
 // Récupération de l'id du professeur
-$stmt = $conn->prepare("SELECT id_prof FROM profs WHERE nom = ?");
+$stmt = $conn->prepare("SELECT id_prof FROM Profs WHERE nom = ?");
 $stmt->bind_param("s", $resp);
 $stmt->execute();
 $stmt->store_result();

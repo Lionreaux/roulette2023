@@ -6,7 +6,7 @@ include_once pathForOs($_SERVER['DOCUMENT_ROOT'] . "/Modele/connexion.php");
 $conn = generateMysqliConnexion();
 
 // Requête pour récupérer les données de la table etudiants
-$stmt = $conn->prepare("SELECT id, statut FROM etudiants");
+$stmt = $conn->prepare("SELECT id, statut FROM Etudiants");
 $stmt->execute();
 $result = $stmt->get_result();
 
@@ -16,12 +16,12 @@ while ($row = $result->fetch_assoc()) {
     $statut = $row['statut'];
 
     // Mise à jour de la colonne dernierCours avec la valeur de la colonne statut
-    $stmt = $conn->prepare("UPDATE etudiants SET dernierCours = ? WHERE id = ?");
+    $stmt = $conn->prepare("UPDATE Etudiants SET dernierCours = ? WHERE id = ?");
     $stmt->bind_param("si", $statut, $idEtudiant);
     $stmt->execute();
 
     // Vidage de la colonne statut
-    $stmt = $conn->prepare("UPDATE etudiants SET statut = NULL WHERE id = ?");
+    $stmt = $conn->prepare("UPDATE Etudiants SET statut = NULL WHERE id = ?");
     $stmt->bind_param("i", $idEtudiant);
     $stmt->execute();
 }

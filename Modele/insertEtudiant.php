@@ -6,7 +6,7 @@ $conn = generateMysqliConnexion();
 $nom = $_GET["nom"];
 $classe = $_GET["classe"];
 
-$stmt = $conn->prepare("SELECT id FROM classes WHERE nom = ?");
+$stmt = $conn->prepare("SELECT id FROM Classes WHERE nom = ?");
 $stmt->bind_param("s", $classe);
 $stmt->execute();
 $stmt->store_result();
