@@ -1,4 +1,5 @@
 <?php
+
 function generateMysqliConnexion($user = "userRoulette", $password = "123456789", $db_name = "Roulette", $host = "localhost"){
     try {
         $conn = new mysqli($host, $user, $password, $db_name);

@@ -14,7 +14,7 @@ if ($stmt->num_rows > 0) {
     $stmt->bind_result($idClasse);
     $stmt->fetch();
 
-    $stmt = $conn->prepare("INSERT INTO etudiants (nom, classe) VALUES (?, ?)");
+    $stmt = $conn->prepare("INSERT INTO Etudiants (nom, classe) VALUES (?, ?)");
     $stmt->bind_param("si", $nom,$idClasse);
     $stmt->execute();
     $affected_rows = $stmt->affected_rows;

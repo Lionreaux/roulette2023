@@ -17,7 +17,7 @@ $stmt->bind_result($idProf);
 $stmt->fetch();
 
 // Insertion de la classe dans la base de données
-$stmt = $conn->prepare("INSERT INTO classes (nom, responsable) VALUES (?, ?)");
+$stmt = $conn->prepare("INSERT INTO Classes (nom, responsable) VALUES (?, ?)");
 $stmt->bind_param("si", $nomClasse, $idProf);
 $stmt->execute();
 
