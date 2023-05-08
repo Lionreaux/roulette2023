@@ -1,3 +1,4 @@
+access: private
 <?php
 
 const DB_USER = "userRoulette";
