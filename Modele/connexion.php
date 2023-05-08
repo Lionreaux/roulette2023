@@ -1,6 +1,7 @@
 <?php
+require_once("config.php");
 
-function generateMysqliConnexion($user = "userRoulette", $password = "123456789", $db_name = "Roulette", $host = "localhost"){
+function generateMysqliConnexion($user = DB_USER, $password = DB_PASSWORD, $db_name = DB_NAME ,$host = DB_HOST){
     try {
         $conn = new mysqli($host, $user, $password, $db_name);
         if ($conn->connect_error) {throw new Error("Connection failed: " . $conn->connect_error);}
