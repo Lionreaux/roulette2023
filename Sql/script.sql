@@ -31,6 +31,15 @@ CREATE TABLE Etudiants (
   FOREIGN KEY (classe) REFERENCES Classes(id) ON DELETE CASCADE
 );
 
+CREATE TABLE NotesEtudiants (
+  id int auto_increment NOT NULL,
+  etudiant_id int,
+  maximum int,
+  note int,
+  PRIMARY KEY (id),
+  FOREIGN KEY (etudiant_id) REFERENCES Etudiants(id) ON DELETE CASCADE
+);
+
 #Requetes d'insertions des étudiants :
 INSERT INTO Profs (nom,mdp) VALUES ('Benjamin','123'),('Benoit','456'),('Stephane','789');
 
