@@ -43,10 +43,10 @@ function validerEtudiant() {
 
 }
 
-function creerClasse() {
+function creerClasse(action) {
     var nomClasse = document.getElementById("nomClasse").value;
     var resp = document.getElementById("resp").value;
-    var url = "/Controlleur/Json/addClasse?nomClasse=" + nomClasse + "&resp=" + resp;
+    var url = "/Controlleur/Json/addClasse?nomClasse=" + nomClasse + "&resp=" + resp + "&action=" + action;
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
