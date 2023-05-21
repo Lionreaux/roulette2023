@@ -66,6 +66,10 @@ li {
 }
 
 
+.success {
+    border: 2px solid blue;
+    /* Autres styles que vous souhaitez appliquer */
+}
 
 
 /* style Gestion */
