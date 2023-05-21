@@ -81,6 +81,22 @@ var statut;
 function checkStatut(statutEtud) {
     statut = statutEtud;
 
+    if (statut === "Present") {
+        var btnPresent = document.getElementById('btnPresent');
+        btnPresent.classList.add('success');
+
+        setTimeout(function() {
+            btnPresent.classList.remove('success'); // Supprime la classe "success-border" après 1 seconde
+        }, 1000);
+    }
+    else if (statut === "Absent") {
+        var btnAbsent = document.getElementById('btnAbsent');
+        btnAbsent.classList.add('success');
+
+        setTimeout(function() {
+            btnAbsent.classList.remove('success'); // Supprime la classe "success-border" après 1 seconde
+        }, 1000);
+    }
 }
 function confirmer() {
     let formdata = new FormData();
